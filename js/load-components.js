@@ -17,7 +17,7 @@ async function loadAllComponents() {
         { name: 'hero', target: 'hero' },
         { name: 'stats', target: 'stats' },
         { name: 'features', target: 'features' },
-        { name: 'how-it-works', target: 'how-it-works' },
+        { name: 'how', target: 'how' },
         { name: 'pricing', target: 'pricing' },
         { name: 'feedbacks', target: 'feedbacks' },
         { name: 'faq', target: 'faq' },
