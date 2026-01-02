@@ -16,7 +16,6 @@ async function loadAllComponents() {
         { name: 'navbar', target: 'navbar' },
         { name: 'hero', target: 'hero' },
         { name: 'stats', target: 'stats' },
-        { name: 'features', target: 'features' },
         { name: 'how', target: 'how' },
         { name: 'pricing', target: 'pricing' },
         { name: 'feedbacks', target: 'feedbacks' },
