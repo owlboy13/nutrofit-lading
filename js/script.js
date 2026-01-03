@@ -211,6 +211,6 @@ function toggleFAQ(index) {
 }
 
 // Console easter egg
-console.log('%c🚀 NutroFit', 'font-size: 20px; color: #10b981; font-weight: bold;');
-console.log('%cDesenvolvido com ❤️ para médicos nutrólogos', 'font-size: 12px; color: #1e3a8a;');
-console.log('%cInteressado em trabalhar conosco? Entre em contato!', 'font-size: 12px; color: #6b7280;');
+console.log('%c NutroFit', 'font-size: 20px; color: #10b981; font-weight: bold;');
+console.log('%c Desenvolvido por Anderson Luiz DEV', 'font-size: 12px; color: #e4e4e4ff;');
+console.log('%c Gostou do meu trabalho? Entre em contato! (83) 99920-8007', 'font-size: 12px; color: #fafafaff;');
