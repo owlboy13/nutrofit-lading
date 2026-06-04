@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // OPÇÃO 1: Usar Formspree (Recomendado - Gratuito até 50 envios/mês)
             // Cadastre-se em https://formspree.io/ e substitua YOUR_FORM_ID
-            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            const response = await fetch('https://formspree.io/f/xbdelgqd', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
