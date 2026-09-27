@@ -214,3 +214,55 @@ function toggleFAQ(index) {
 console.log('%c NutroFit', 'font-size: 20px; color: #10b981; font-weight: bold;');
 console.log('%c Desenvolvido por Anderson Luiz DEV', 'font-size: 12px; color: #e4e4e4ff;');
 console.log('%c Gostou do meu trabalho? Entre em contato! (83) 99920-8007', 'font-size: 12px; color: #fafafaff;');
+
+// Feedback Carousel
+document.addEventListener('componentsLoaded', () => {
+    requestAnimationFrame(() => {
+        const track = document.getElementById('fb-track');
+        if (!track) return;
+
+        const prevBtn = document.getElementById('fb-prev');
+        const nextBtn = document.getElementById('fb-next');
+        let current = 0;
+        const GAP = 24;
+
+        function getVisible() {
+            if (window.innerWidth >= 1024) return 4;
+            if (window.innerWidth >= 640) return 2;
+            return 1;
+        }
+
+        function getMax() {
+            return Math.max(0, track.children.length - getVisible());
+        }
+
+        function setCardWidths() {
+            const containerWidth = track.parentElement.offsetWidth;
+            if (!containerWidth) return;
+            const visible = getVisible();
+            const cardWidth = (containerWidth - GAP * (visible - 1)) / visible;
+            Array.from(track.children).forEach(card => {
+                card.style.width = cardWidth + 'px';
+            });
+        }
+
+        function go(n) {
+            current = Math.max(0, Math.min(n, getMax()));
+            const cardWidth = track.children[0].offsetWidth;
+            track.style.transform = `translateX(-${current * (cardWidth + GAP)}px)`;
+            prevBtn.style.opacity = current === 0 ? '0.4' : '1';
+            nextBtn.style.opacity = current >= getMax() ? '0.4' : '1';
+        }
+
+        prevBtn.addEventListener('click', () => go(current - 1));
+        nextBtn.addEventListener('click', () => go(current + 1));
+
+        window.addEventListener('resize', () => {
+            setCardWidths();
+            go(Math.min(current, getMax()));
+        });
+
+        setCardWidths();
+        go(0);
+    });
+});
